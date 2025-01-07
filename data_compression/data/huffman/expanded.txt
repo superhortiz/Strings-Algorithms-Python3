@@ -1,0 +1,24 @@
+Huffman compression is a popular method used to compress data efficiently. It's a type of lossless data compression, meaning no information is lost during the compression process. Here's a brief overview:
+
+How Huffman Compression Works
+Frequency Analysis: The process starts with analyzing the frequency of each character or symbol in the data. Frequently occurring characters will be assigned shorter codes, while less frequent characters get longer codes.
+
+Building the Huffman Tree:
+
+A binary tree (Huffman tree) is constructed based on the frequency of each character.
+
+Each character is represented as a leaf node, with the frequency as its weight.
+
+Nodes are combined in ascending order of their frequencies to form a binary tree. The two nodes with the smallest frequencies are combined first to create a new node with a combined frequency.
+
+This process continues until there is only one node left, which becomes the root of the tree.
+
+Generating Huffman Codes:
+
+Each path from the root to a leaf node in the Huffman tree represents a unique binary code for the corresponding character.
+
+Typically, moving left down the tree represents a '0', and moving right represents a '1'. Hence, each character gets a binary code based on its position in the tree.
+
+Encoding: The original data is replaced with these binary codes to create the compressed data. Since more frequent characters have shorter codes, the overall size of the compressed data is reduced.
+
+Decoding: To decompress the data, the Huffman tree is used to decode the binary codes back into the original characters.

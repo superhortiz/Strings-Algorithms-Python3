@@ -1,0 +1,29 @@
+LZW (Lempel-Ziv-Welch) compression is a lossless data compression algorithm. It is widely used in various applications, such as the GIF image format and TIFF files. Here's a detailed look at how LZW compression works:
+
+How LZW Compression Works
+Initialization:
+
+Begin with an initial dictionary containing all possible single-character sequences (typically ASCII characters, which range from 0 to 255).
+
+Encoding:
+
+Read the input data character by character.
+
+Start with an empty string (w).
+
+For each character read, concatenate it with w to form a new string (w+c).
+
+Check if w+c exists in the dictionary:
+
+If it does, set w to w+c.
+
+If it does not, add w+c to the dictionary and output the code for w. Then set w to the current character (c).
+
+Repeat this process until all input characters are processed.
+
+Output the code for the last w after the loop ends.
+
+Dictionary Growth:
+
+The dictionary grows dynamically as new sequences are added. The new sequences consist of longer strings as the compression progresses.
+

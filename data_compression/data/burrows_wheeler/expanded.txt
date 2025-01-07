@@ -1,0 +1,11 @@
+The Burrows-Wheeler data compression algorithm consists of three algorithmic components, which are applied insuccession:
+1.
+Burrows-Wheeler transform.
+Given a typical English text file, transform it into a text file in which sequences of thesame character occur near each other many times.
+2.
+Move-to-front encoding.
+Given a text file in which sequences of the same character occur near each other manytimes, convert it into a text file in which certain characters appear much more frequently than others.
+3.
+Huffman compression.
+Given a text file in which certain characters appear much more frequently than others,compress it by encoding frequently occurring characters with short codewords and infrequently occurring characterswith long codewords.
+Step 3 is the only one that compresses the message: it is particularly effective because Steps 1 and 2 produce a text file inwhich certain characters appear much more frequently than others. To expand a message, apply the inverse operations inreverse order: first apply the Huffman expansion, then the move-to-front decoding, and finally the inverse Burrows-Wheeler transform.
